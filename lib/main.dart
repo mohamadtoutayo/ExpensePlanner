@@ -108,9 +108,10 @@ class _MyHomePageState extends State<MyHomePage> {
             trailing: Row(
               mainAxisSize: MainAxisSize.min,
               children: <Widget>[
-                CupertinoButton(
-                    child: Text('Add'),
-                    onPressed: () => _startAddNewTransaction(context))
+                GestureDetector(
+                  child: Icon(CupertinoIcons.add),
+                  onTap: () => _startAddNewTransaction(context),
+                )
               ],
             ),
           )

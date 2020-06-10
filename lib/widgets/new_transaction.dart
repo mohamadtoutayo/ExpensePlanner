@@ -63,37 +63,22 @@ class _NewTransactionState extends State<NewTransaction> {
             top: 10,
             left: 10,
             right: 10,
-            bottom: MediaQuery.of(context).viewInsets.bottom + 10,
+            bottom: MediaQuery.of(context).viewInsets.bottom + 30,
           ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.end,
             children: <Widget>[
-              Platform.isIOS
-                  ? CupertinoTextField(
-                      placeholder: 'Title',
-                      controller: _titleController,
-                      onSubmitted: (_) => _submitData(),
-                    )
-                  : TextField(
-                      decoration: InputDecoration(labelText: 'Title'),
-                      controller: _titleController,
-                      onSubmitted: (_) => _submitData(),
-                    ),
-              Platform.isIOS
-                  ? CupertinoTextField(
-                      placeholder: 'Amount',
-                      controller: _amountController,
-                      keyboardType:
-                          TextInputType.numberWithOptions(decimal: true),
-                      onSubmitted: (_) => _submitData(),
-                    )
-                  : TextField(
-                      decoration: InputDecoration(labelText: 'Amount'),
-                      controller: _amountController,
-                      keyboardType:
-                          TextInputType.numberWithOptions(decimal: true),
-                      onSubmitted: (_) => _submitData(),
-                    ),
+              TextField(
+                decoration: InputDecoration(labelText: 'Title'),
+                controller: _titleController,
+                onSubmitted: (_) => _submitData(),
+              ),
+              TextField(
+                decoration: InputDecoration(labelText: 'Amount'),
+                controller: _amountController,
+                keyboardType: TextInputType.numberWithOptions(decimal: true),
+                onSubmitted: (_) => _submitData(),
+              ),
               Container(
                 height: 70,
                 child: Row(
